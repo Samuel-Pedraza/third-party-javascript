@@ -39,9 +39,11 @@ function successCallback() {
 
 returnMyLocation = function() {
   document.getElementById("myip").value = JSON.parse(lookupIPlocation.response).zip_code;
+  document.getElementById("myip").value += JSON.parse(lookupIPlocation.response).city;
+  document.getElementById("myip").value += JSON.parse(lookupIPlocation.response).region;
 };
 
 
-var myHtmlForm = "<form action='https://formspree.io/samdpedraza@gmail.com' method='POST'><h4>Quick Quote</h4><input type='email' name='_replyto' placeholder='email'><br><input type='text' name='qty' placeholder='specify quantity'><textarea name='specify' placeholder='Specify a particulary product on this page'></textarea><input type='hidden' id='myip' name='myip' value=''><input type='hidden' name='url' value='" + window.location.href + "'><br><input type='submit' value='Send'></form><script type='application/javascript' src='https://api.ipify.org?format=jsonp&callback=getIP'></\script>";
+var myHtmlForm = "<form action='https://formspree.io/samdpedraza@gmail.com' method='POST'><h4>Quick Quote</h4><input type='email' name='email' id='frmEmailA' placeholder='name@example.com' required autocomplete='email'><br><input type='text' name='qty' placeholder='specify quantity'><textarea name='specify' placeholder='Specify a particulary product on this page'><input name='ship-address' required id='frmAddressS' placeholder='123 Any Street' autocomplete='shipping street-address'></textarea><input type='hidden' name='url' value='" + window.location.href + "'><br><input type='submit' value='Send'></form><script type='application/javascript' src='https://api.ipify.org?format=jsonp&callback=getIP'></\script>";
 
 document.getElementById('498598754783429084329085897579hsdfahbfskr3uh3289498fehnesnfanfwe89').innerHTML = myHtmlForm;

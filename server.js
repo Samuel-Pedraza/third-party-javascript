@@ -3,7 +3,7 @@ var app = express();
 var path = require('path');
 
 // viewed at http://localhost:8080
-app.get('/', function(req, res) {
+app.get('/myproduct/123451', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
